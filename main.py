@@ -2,8 +2,8 @@ import sys, random
 
 assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 
-rand = random.randint(1,15)
-guesscount = 0
+#rand = random.randint(1,15)
+#guesscount = 0
 name = input('What is your name? ')
 print('Hello ' + name + ', think of a number between 1 and 15.')
 print('Can you guess the number I am thinking of?')
@@ -12,18 +12,20 @@ print('I will give you 5 guesses.\n')
 play_again = ''
 
 while (play_again != 'n' and play_again != 'no'):
+    rand = random.randint(1,15)
+    guesscount = 0
 
-    while guesscount < 5:
-        print("What is your numerical guess? ")
+    while guesscount != 5:
+        print("\nWhat is your numerical guess? ")
         number = input()
         number = int(number)
-        guesscount = guesscount + 1
+        guesscount += 1
         
         if number > rand:
-            print('Your guess was too high, try again')
+            print('Your guess was too high, You have guessed {guesscount} times.'.format(guesscount=guesscount))
 
         if number < rand:
-            print('Your guess was too low, try again')
+            print('Your guess was too low, You have guessed {guesscount} times.'.format(guesscount=guesscount))
 
         if number == rand:
             break
@@ -33,9 +35,10 @@ while (play_again != 'n' and play_again != 'no'):
     if number != rand:
         print('\n')
         rand = str(rand)
-        print('Sorry I was thinking of the number ' + rand + '.' )
-
-    play_again = input("Do you want to play again and guess a different number?").lower().strip()
+        print('\nSorry I was thinking of the number ' + rand + '.' )
+    
+    play_again = input("\nDo you want to play again and guess a different number? (yes or no): ").lower().strip()
+    
 
 print('\nThat sucks, but thanks for playing!!')
 
