@@ -1,5 +1,7 @@
-# This is a guess the number game.
+
 # Not my work, Copied from Canvas to study how it works
+#Copied from canvas to disect how the game worked
+
 
 import random
 
