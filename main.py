@@ -2,8 +2,6 @@ import sys, random
 
 assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 
-#rand = random.randint(1,15)
-#guesscount = 0
 name = input('What is your name? ')
 print('Hello ' + name + ', think of a number between 1 and 15.')
 print('Can you guess the number I am thinking of?')
