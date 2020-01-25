@@ -40,7 +40,33 @@ while (play_again != 'n' and play_again != 'no'):
     play_again = input("\nDo you want to play again and guess a different number? (yes or no): ").lower().strip()
     
 
-print('\nThat sucks, but thanks for playing!!')
+print('\nThat sucks, but here is a question for the road.')
+
+#Bonus prompt if the user does not want to play again below
+
+############################################################
+############################################################
+############################################################
+############################################################
+
+color = ''
+while(color != 'cream and crimson'):
+    color = input("\nWhat are IU's school colors? ")
+    color = color.lower().strip()
+    if (color == 'cream and crimson'):
+        break
+    else:
+        print("Incorrect the colors are Cream and Crimison, but thanks for playing!")
+        break
+if (color == 'cream and crimson'):
+    print("You got it! Go IU!")
+    print("\U0001F606") #Searched Unicode for this emoji!
+
+
+
+
+
+
 
 
 
