@@ -2,33 +2,62 @@ import sys, random
 
 assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 
-r = random.randint(1,20)
-
+rand = random.randint(1,15)
+guesscount = 0
 name = input('What is your name? ')
-print('Hello ' + name + ', guess a number between 1 and 20') 
-h = input()
+print('Hello ' + name + ', think of a number between 1 and 15.')
+print('Can you guess the number I am thinking of?')
+print('I will give you 5 guesses.\n')
+
+play_again = ''
+
+while (play_again != 'n' and play_again != 'no'):
+
+    while guesscount < 5:
+        print("What is your numerical guess? ")
+        number = input()
+        number = int(number)
+        guesscount = guesscount + 1
+        
+        if number > rand:
+            print('Your guess was too high, try again')
+
+        if number < rand:
+            print('Your guess was too low, try again')
+
+        if number == rand:
+            break
+    if number == rand:
+        guesscount= str(guesscount)
+        print('Correct! It took you '+ guesscount +' guesses! ')
+    if number != rand:
+        print('\n')
+        rand = str(rand)
+        print('Sorry I was thinking of the number ' + rand + '.' )
+
+    play_again = input("Do you want to play again and guess a different number?").lower().strip()
+
+print('\nThat sucks, but thanks for playing!!')
 
 
-while name == true:
-    guess = 0
-    if h == true:
-        guesscont = guesscount + 1
 
-    if h > r:
-        print('You guessed too high, you have guessed {guesscount} time(s). Try again')
-    if h < r:
-        print('You guessed to low, you have guessed {guesscount} time(s). Try again.')
-    if h == r:
-        break
-if h == r:
-    guesscont = str(guesscont)
-    print('You got it! It took you'+ guesscont + 'time(s). ')
-if h = false
-    print("Uh oh, you have to guess a number between 1 and 20.")
-if h < 1:
-    print("Uh oh, you have to guess a number between 1 and 20.")
-if h > 20:
-    print("Uh oh, you have to guess a number between 1 and 20.") 
+
+    
+        
+
+    
+
+
+
+
+
+
+    
+
+
+
+
+
     
 
 
